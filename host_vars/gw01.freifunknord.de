@@ -19,7 +19,7 @@ dhcp_max_lease_time: 3600
 dhcp_log_facility: local7
 dhcp_ipv4_network: 10.187.1.0
 dhcp_ipv4_netmask: 255.255.252.0
-dhcp_ipv4_range: 10.187.1.1 10.187.3.254
+dhcp_ipv4_range: 10.187.1.1 10.187.4.254
 dhcp_option_domain_name: ffnord
 dhcp_option_domain_name_servers: 10.187.0.1
 dhcp_option_ntp_servers: 10.187.0.1
