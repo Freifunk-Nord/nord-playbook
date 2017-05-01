@@ -1,3 +1,2 @@
 [gateways]
-rendsburg.ffrdeck.net
-eckernfoerde.ffrdeck.net
+gw01.freifunknord.de ansible_host=217.182.94.146
