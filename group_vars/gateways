@@ -1,13 +1,13 @@
 ---
-site_name: 'Freifunk Rendsburg-Eckernförde'
-site_code: 'ffrdeck'
-as: '64897'
-prefix4: '10.75.0.0/16'
-prefix6: 'fd6d:451b:250f::/64'
+site_name: 'Freifunk Nord'
+site_code: 'ffnord'
+as: '65187'
+prefix4: '10.187.0.0/16'
+prefix6: 'fdda:fee6:0187::/64'
 mesh_mtu: 1364
 
 # tunneldigger
-tunneldigger_broker_port: 10050
+tunneldigger_broker_port: 10060
 tunneldigger_port_base: 20000
 tunneldigger_tunnel_id_base: 100
 tunneldigger_tunnel_timeout: 60
