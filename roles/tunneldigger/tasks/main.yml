@@ -1,0 +1,123 @@
+---
+- lineinfile:
+    dest: /etc/modules
+    line: nf_conntrack_netlink
+    
+- modprobe:
+    name: nf_conntrack_netlink
+    state: present
+
+- lineinfile:
+    dest: /etc/modules
+    line: nf_conntrack
+    
+- modprobe:
+    name: nf_conntrack
+    state: present
+
+- lineinfile:
+    dest: /etc/modules
+    line: nfnetlink
+    
+- modprobe:
+    name: nfnetlink
+    state: present
+    
+- lineinfile:
+    dest: /etc/modules
+    line: l2tp_core
+    
+- modprobe:
+    name: l2tp_core
+    state: present
+    
+- lineinfile:
+    dest: /etc/modules
+    line: l2tp_eth
+    
+- modprobe:
+    name: l2tp_eth
+    state: present
+
+- lineinfile:
+    dest: /etc/modules
+    line: l2tp_netlink
+        
+- modprobe:
+    name: l2tp_netlink
+    state: present
+
+- lineinfile:
+    dest: /etc/modules
+    line: ebtables
+    
+- modprobe:
+    name: ebtables
+    state: present
+
+- apt:
+   name: iproute
+   state: present
+   
+- apt:
+   name: bridge-utils
+   state: present
+   
+- apt:
+   name: libnetfilter-conntrack3
+   state: present
+   
+- apt:
+   name: python-dev
+   state: present
+
+- apt:
+   name: libevent-dev
+   state: present
+   
+- apt:
+   name: ebtables
+   state: present
+   
+- apt:
+   name: python-virtualenv
+   state: present
+   
+- git:
+    repo: 'https://github.com/ffrl/tunneldigger.git'
+    dest: /srv/tunneldigger
+
+- pip:
+    requirements: /srv/tunneldigger/broker/requirements.txt
+    virtualenv: /srv/tunneldigger
+
+- template:
+   src: srv/tunneldigger/broker/l2tp_broker.cfg.j2
+   dest: /srv/tunneldigger/broker/l2tp_broker.cfg
+   
+- template:
+   src: srv/tunneldigger/broker/scripts/session-up.sh.j2
+   dest: /srv/tunneldigger/broker/scripts/session-up.sh
+   mode: 0755
+   
+- template:
+   src: srv/tunneldigger/broker/scripts/session-pre-down.sh.j2
+   dest: /srv/tunneldigger/broker/scripts/session-pre-down.sh
+   mode: 0755
+
+- template:
+   src: srv/tunneldigger/broker/blacklist.j2
+   dest: /srv/tunneldigger/broker/blacklist
+  
+- template:
+   src: srv/tunneldigger/start-broker.sh.j2
+   dest: /srv/tunneldigger/start-broker.sh
+   mode: 0755
+
+- template:
+   src: etc/systemd/system/tunneldigger.service.j2
+   dest: /etc/systemd/system/tunneldigger.service
+   
+- service:
+    name: tunneldigger
+    enabled: yes

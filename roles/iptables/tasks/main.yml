@@ -1,0 +1,8 @@
+---
+- apt:
+   name: iptables
+   state: present
+
+- apt:
+   name: iptables-persistent
+   state: present

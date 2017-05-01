@@ -1,0 +1,26 @@
+---
+- apt:
+   name: bird
+   state: present
+
+- file:
+   path: /etc/bird/bird.conf.d
+   state: directory
+   mode: 0755
+
+- file:
+   path: /etc/bird/bird6.conf.d
+   state: directory
+   mode: 0755
+
+- template:
+   src: etc/bird/bird.conf.j2
+   dest: /etc/bird/bird.conf
+
+- template:
+   src: etc/bird/bird6.conf.j2
+   dest: /etc/bird/bird6.conf
+
+- template:
+   src: etc/bird/bird6.conf.d/template.conf.j2
+   dest: /etc/bird/bird6.conf.d/{{ site_code }}.conf

@@ -1,0 +1,20 @@
+---
+- lineinfile:
+   dest: /etc/iproute2/rt_tables
+   line: 42 mesh
+   
+- apt:
+   name: bridge-utils
+   state: present
+
+- template:
+   src: etc/network/interfaces.d/bat0.j2
+   dest: /etc/network/interfaces.d/bat0
+
+- template:
+   src: etc/network/interfaces.d/br0.j2
+   dest: /etc/network/interfaces.d/br0
+   
+- template:
+   src: etc/network/interfaces.d/tunneldigger.j2
+   dest: /etc/network/interfaces.d/tunneldigger

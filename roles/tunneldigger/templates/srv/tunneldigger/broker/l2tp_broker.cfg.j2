@@ -1,0 +1,21 @@
+[broker]
+address={{ ipv4 }}
+port={{ tunneldigger_broker_port }}
+interface=eth0
+max_cookies={{ tunneldigger_max_cookies }}
+max_tunnels={{ tunneldigger_max_tunnels }}
+port_base={{ tunneldigger_port_base }}
+tunnel_id_base={{ tunneldigger_tunnel_id_base }}
+tunnel_timeout={{ tunneldigger_tunnel_timeout }}
+pmtu-discovery=false
+namespace=default
+check_modules=true
+
+[log]
+filename=tunneldigger-broker.log
+verbosity=DEBUG
+log_ip_addresses=false
+
+[hooks]
+session.up=/srv/tunneldigger/broker/scripts/session-up.sh
+session.pre-down=/srv/tunneldigger/broker/scripts/session-pre-down.sh

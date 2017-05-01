@@ -1,0 +1,16 @@
+ddns-update-style {{ dhcp_ddns_update_style }};
+
+default-lease-time {{ dhcp_default_lease_time }};
+
+max-lease-time {{ dhcp_max_lease_time }};
+
+log-facility {{ dhcp_log_facility }};
+
+subnet {{ dhcp_ipv4_network }} netmask {{ dhcp_ipv4_netmask }} {
+	authoritative;
+	range {{ dhcp_ipv4_range }};
+	option domain-name "{{ dhcp_option_domain_name }}";
+	option domain-name-servers {{ dhcp_option_domain_name_servers }};
+	option ntp-servers {{ dhcp_option_ntp_servers }};
+	option routers {{ dhcp_option_routers }};
+}

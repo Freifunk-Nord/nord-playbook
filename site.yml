@@ -1,0 +1,23 @@
+---
+- name: apply common configuration to all hosts
+  hosts: all
+  remote_user: debian
+  sudo: true
+
+  roles:
+   - common
+
+- name: apply gateway configuration to gateways
+  hosts: gateways
+  remote_user: debian
+  sudo: true
+
+  roles:
+   - batman-adv
+   - bind9
+   - bird
+   - iptables
+   - isc-dhcp-server
+   - network
+   - radvd
+   - tunneldigger

@@ -1,0 +1,12 @@
+---
+- lineinfile:
+    dest: /etc/modules
+    line: batman-adv
+    
+- modprobe:
+    name: batman-adv
+    state: present
+
+- apt:
+   name: batctl
+   state: present

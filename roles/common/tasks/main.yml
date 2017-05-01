@@ -1,0 +1,8 @@
+---
+- apt:
+   name: ntp
+   state: present
+
+- apt:
+   name: git
+   state: present

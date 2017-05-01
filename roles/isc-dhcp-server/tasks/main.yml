@@ -1,0 +1,8 @@
+---
+- apt:
+   name: isc-dhcp-server
+   state: present
+
+- template:
+   src: etc/dhcp/dhcp.conf.j2
+   dest: /etc/dhcp/dhcp.conf

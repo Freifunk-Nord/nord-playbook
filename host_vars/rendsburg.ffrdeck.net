@@ -1,0 +1,31 @@
+---
+# public network
+ipv4: 213.32.30.6
+ipv6: 2001:41d0:401:2000::2:3387
+
+# mesh network
+mesh_ipv4_prefix: 10.75.0.0/22
+mesh_ipv6_prefix: fd6d:451b:250f::/64
+mesh_ipv4_address: 10.75.0.1
+mesh_ipv4_netmask: 255.255.252.0
+mesh_ipv6_address: fd6d:451b:250f::1
+mesh_ipv6_netmask: 64
+mesh_mac: fe:ed:be:ef:ff:01
+
+# DHCP
+dhcp_ddns_update_style: none
+dhcp_default_lease_time: 600
+dhcp_max_lease_time: 3600
+dhcp_log_facility: local7
+dhcp_ipv4_network: 10.75.0.0
+dhcp_ipv4_netmask: 255.255.252.0
+dhcp_ipv4_range: 10.75.0.2 10.75.3.254
+dhcp_option_domain_name: ffrdeck
+dhcp_option_domain_name_servers: 10.75.0.1
+dhcp_option_ntp_servers: 10.75.0.1
+dhcp_option_routers: 10.75.0.1
+
+# tunneldigger
+tunneldigger_max_cookies: 50
+tunneldigger_max_tunnels: 50
+tunneldigger_mac: fe:ed:be:ff:ff:01
