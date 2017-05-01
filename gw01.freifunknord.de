@@ -4,28 +4,28 @@ ipv4: 217.182.94.146
 ipv6: 2001:41d0:401:2100::b0fd
 
 # mesh network
-mesh_ipv4_prefix: 10.187.250.0/22
+mesh_ipv4_prefix: 10.187.1.0/22
 mesh_ipv6_prefix: fdda:fee6:0187::/64
-mesh_ipv4_address: 10.187.250.1
+mesh_ipv4_address: 10.187.0.1
 mesh_ipv4_netmask: 255.255.252.0
-mesh_ipv6_address: fdda:fee6:0187::fd99
+mesh_ipv6_address: fdda:fee6:0187::fd01
 mesh_ipv6_netmask: 64
-mesh_mac: fe:ed:be:ef:ff:99
+mesh_mac: fe:ed:be:ef:ff:01
 
 # DHCP
 dhcp_ddns_update_style: none
 dhcp_default_lease_time: 600
 dhcp_max_lease_time: 3600
 dhcp_log_facility: local7
-dhcp_ipv4_network: 10.187.250.0
+dhcp_ipv4_network: 10.187.1.0
 dhcp_ipv4_netmask: 255.255.252.0
-dhcp_ipv4_range: 10.187.250.2 10.187.250.254
+dhcp_ipv4_range: 10.187.1.1 10.187.3.254
 dhcp_option_domain_name: ffnord
-dhcp_option_domain_name_servers: 10.187.250.1
-dhcp_option_ntp_servers: 10.187.250.1
-dhcp_option_routers: 10.187.250.1
+dhcp_option_domain_name_servers: 10.187.0.1
+dhcp_option_ntp_servers: 10.187.0.1
+dhcp_option_routers: 10.187.0.1
 
 # tunneldigger
 tunneldigger_max_cookies: 50
 tunneldigger_max_tunnels: 50
-tunneldigger_mac: fe:ed:be:ff:ff:99
+tunneldigger_mac: fe:ed:be:ff:ff:01
